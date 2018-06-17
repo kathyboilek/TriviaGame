@@ -40,18 +40,10 @@ JavaScript logic:
     -   If the answer is wrong, then...
 -   Show the number of correct answers out of the total
 
-Correct answers to trivia questions:
+Possible questions with correct answers:
 
 What famous role did both Cary Grant and Noel Coward reject?
 A: James Bond
-
-Name all the actors who have played "007" James Bond.
-George Lazenby
-Sean Connery
-Roger Moore
-Timothy Dalton
-Pierce Brosnan
-Daniel Craig
 
 Which was the last feature film of screen legend Paul Newman, which was also the highest grossing movie of his career?
 A:  Cars (2006)
