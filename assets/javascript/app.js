@@ -36,18 +36,47 @@ var triviaQuestions = [{
     question: "In the movie Star Wars, what is the Emperors last name?",
     choices: ["Aurelius", "Commodus", "Sidious", "Palpatine"],
     correctAnswer: 3
-}];
+}
+
+];
 
 var currentQuestion = 0;
 var correctAnswers = 0;
 var quizOver = false;
+var timer = 20;
+var timerOn = false;
+var timerId = '';
 
-$(document).ready(function () {
+
+$(document).ready(function () { // event listeners
+    $("#remaining-time").hide();
+    $("#start").on('click', triviaQuestions.startGame);
+    $(document).on('click' , '.option', triviaQuestions.guessChecker);
+    
+  })
+
 
     // Display the first question
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
 
+    $('#game').show();
+    
+    //  empty last results
+    $('#results').html('');
+    
+    // show timer
+    $('#timer').text(trivia.timer);
+    
+    // remove start button
+    $('#start').hide();
+
+    $('#remaining-time').show();
+    
+    // ask first question
+    trivia.nextQuestion();
+    
+  
     // Click to display the next question
     $(this).find(".nextButton").on("click", function () {
         if (!quizOver) {
@@ -84,7 +113,6 @@ $(document).ready(function () {
         }
     });
 
-});
 
 // This displays the current question AND the choices
 function displayCurrentQuestion() {
