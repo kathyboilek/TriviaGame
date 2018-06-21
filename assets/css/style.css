@@ -1,44 +1,104 @@
 /* CSS */
 
-body{
-    font-family: 'Gentium Basic', serif;
-    font-size: 25px;
-    margin: 0px;
-	padding: 0px;
-}
-
-h1{
-    font-family: 'Monoton', cursive;
-    font-size: 24px;
-    text-align: center;
-}
-
 .jumbotron{
-	margin-bottom: 20px;
-}
-
-.btn-primary,.reset{
-	background-color: #35031a;
-	color: white;
-	font-size: 30px;
-	padding: 20px;
-	margin-top: 100px;
-}
-.btn-primary:hover, .reset:hover{
-	background-color: #8b2b58;
+	margin-bottom: 10px;
+	background-color: #588ea8;
+    background-size:cover;
+    background-position:center;
+    padding-top:10px;
 }
 
 .container{
-	margin-top: 50px;
+	margin-top: 20px;
 	text-align: center;
 	height: 100%;
 	width: 750px;
 }
 
-.thisChoice:hover{
-	background-color: #35031a;
-	color: white;
-	padding: 10px;
+p {
+	font-family: 'Forum', cursive;
+	font-size: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+	font-family: 'Forum', cursive;
+    font-size: 24px;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 20px;
+    height: 15px;
+}
+
+ .triviaContainer {
+    background-color: lightgoldenrodyellow;
+    border-radius: 6px;
+    width: 65%;
+    margin: auto;
+    padding-top: 5px;
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;
+    position: relative;
+}
+.question {
+	font-family: 'Forum', cursive;
+    font-size: 30px;
+    width: 65%;
+    height: auto;
+    margin: auto;
+    border-radius: 6px;
+    background-color: lightgrey;
+    text-align: center;
+}
+.quizMessage {
+    background-color: peachpuff;
+    border-radius: 6px;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    padding: 2px;
+	font-family: 'Forum', cursive;
+	color: #ffffff;
+}
+.choiceList {
+	font-family: 'Forum', cursive;
+	font-size: 12px;
+	color: #02344b;
+    width: 65%;
+    height: auto;
+    margin: auto;
+    text-align: left;
+}
+.result {
+    width: 30%;
+    height: auto;
+    border-radius: 6px;
+    background-color: #588ea8;
+    margin: auto;
+    text-align: center;
+	font-family: 'Forum', cursive;
+	font-size: 14px;
+}
+
+.nextButton {
+    box-shadow: 3px 3px 5px #888;
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #02344b;
+    /*clear: both;*/
+    color: #ffffff;
+    font-family: 'Gentium Basic', serif;
+    position: relative;
+    margin: auto;
+    padding-top: 10px;
 }
 
 @media screen and (max-width:640px){
