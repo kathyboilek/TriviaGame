@@ -1,3 +1,4 @@
+// What quiz questions to use
 var triviaQuestions = [{
     question: "What famous role did both Cary Grant and Noel Coward reject?",
     choices: ["James Bond", "Rhett Buttler", "Gordon Gekko", "Vito Corleone"],
@@ -43,50 +44,78 @@ var triviaQuestions = [{
 var currentQuestion = 0;
 var correctAnswers = 0;
 var quizOver = false;
-var timer = 20;
-var timerOn = false;
-var timerId = '';
+// var index = 0;
+// var countdownTimer = {
+//     time : 30,
+//     reset: function() {
+//         this.time = 30;
+//         $('.timer').html('<p>' + this.time + ' seconds remaining</p>');
+//     },
+//     start: function() {
+//         counter = setInterval(countdownTimer.count, 1000);	
+//     },
+//     stop: function() {
+//         clearInterval(counter);
+//     },
+//     count: function() {
+//             countdownTimer.time--;
+//             console.log(countdownTimer.time);
+//         if (countdownTimer.time >= 0) {
+//             $('.timer').html('<p>' + countdownTimer.time + ' seconds remaining</p>');
+//         }
+//         else {
+//             index++;
+//             answerWrong();
+//             countdownTimer.reset();
+//             if (index < triviaQuestions.length) {
+//                 loadQuestion(index);
+//             } else {
+//                 $("input[type='radio']:checked").hide();
+//                 showScore();
+//             }
+//         }
+//     }
+// };
 
 
-$(document).ready(function () { // event listeners
-    $("#remaining-time").hide();
-    $("#start").on('click', triviaQuestions.startGame);
-    $(document).on('click' , '.option', triviaQuestions.guessChecker);
+// Function to start countdown
+function run(){
+    counter = setInterval(decrement, 1000);
+}
+
+// Function to stop countdown
+function stop(){
+clearInterval(counter);
+}
+
+// Function to display time left on the screen and check if coundtown is 0
+function decrement(){
+    number--;
     
-  })
+    $("#timerleft").html('<h2>' + number + " seconds"+'</h2>');
+    
+    if (number === 0){
+        stop();
+        $("#time-up-message").html("Time Up!");
+        checkAnswers();
+    }
+}
 
+$(document).ready(function () { 
 
     // Display the first question
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
 
-    $('#game').show();
-    
-    //  empty last results
-    $('#results').html('');
-    
-    // show timer
-    $('#timer').text(trivia.timer);
-    
-    // remove start button
-    $('#start').hide();
-
-    $('#remaining-time').show();
-    
-    // ask first question
-    trivia.nextQuestion();
-    
-  
     // Click to display the next question
     $(this).find(".nextButton").on("click", function () {
         if (!quizOver) {
-
             value = $("input[type='radio']:checked").val();
-
             if (value == undefined) {
                 $(document).find(".quizMessage").text("You haven't selected an answer yet");
                 $(document).find(".quizMessage").show();
-            } else {
+            } else 
+            {
                 // Remove any message 
                 $(document).find(".quizMessage").hide();
 
@@ -108,8 +137,8 @@ $(document).ready(function () { // event listeners
             quizOver = false;
             $(document).find(".nextButton").text("Next Question");
             resetQuiz();
+            // countdownTimer.reset();
             displayCurrentQuestion();
-            hideScore();
         }
     });
 
@@ -144,8 +173,11 @@ function resetQuiz() {
 function displayScore() {
     $(document).find(".triviaContainer > .result").text("You scored: " + correctAnswers + " out of: " + triviaQuestions.length);
     $(document).find(".triviaContainer > .result").show();
+    // countdownTimer.stop();
+    // $('.timer').empty();
 }
 
 function hideScore() {
     $(document).find(".result").hide();
 }
+});

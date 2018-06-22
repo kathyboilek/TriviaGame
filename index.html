@@ -31,20 +31,37 @@
 </div>
 
 
-<div class="triviaContainer">
+<div id="Game" class="triviaContainer">
     
-    <p id="remaining-time" class="lead">Remaining Time: <span id="timer"></span></p>
-    <div class="question"></div>
-        <ul class="choiceList">
-            <li class="choiceList"></li>
-        </ul>
-    <div class="quizMessage"></div>
-    <div class="result"></div>
-    <div class="nextButton">Next Question</div>
+      <!-- clock -->
+      <section id="clock"></section>
+      <!-- buttons -->
+      <div class="startbtn">
+          <button id="startbtn">Start</button>
+      </div>
+
+      <!-- question section -->
+      <div class="currQuestion" id="currQuestion"></div>
+      <div class="questions" id="questions"></div>
+        <div class="choices" id="choices"></div>
+
+
+      <!-- answer section -->
+      <div class="message" id="message"></div>
+      <div class="choiceSelected"></div>
+
+      <!-- results section -->
+      <div class="finalMessage" id="finalMessage"></div>
+      <div class="correctAnswers" id="correctAnswers"></div>
+      <div class="incorrectAnswers" id="incorrectAnswers"></div>
+      <div id="unanswered"></div>
+      <div id="startoverbtn">
+          <button id="start-overbtn">Start Over</button>
+      </div>
 </div>
     
 <script src="https://code.jquery.com/jquery.js"></script>
-<script type="text/javascript" src="assets/javascript/app.js"></script>
+<script type="text/javascript" src="assets/javascript/app2.js"></script>
 </body>
 
 </html>
